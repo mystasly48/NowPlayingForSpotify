@@ -63,9 +63,9 @@ namespace NowPlayingForSpotify.Properties {
         /// <summary>
         ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Icon NowPlayingForSpotify {
+        internal static System.Drawing.Icon NowPlayingForSpotifyIcon {
             get {
-                object obj = ResourceManager.GetObject("NowPlayingForSpotify", resourceCulture);
+                object obj = ResourceManager.GetObject("NowPlayingForSpotifyIcon", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
@@ -73,29 +73,9 @@ namespace NowPlayingForSpotify.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Bitmap NowPlayingForSpotify1 {
+        internal static System.Drawing.Bitmap NowPlayingForSpotifyPng {
             get {
-                object obj = ResourceManager.GetObject("NowPlayingForSpotify1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Icon OldNowPlayingForSpotify {
-            get {
-                object obj = ResourceManager.GetObject("OldNowPlayingForSpotify", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
-        /// </summary>
-        internal static System.Drawing.Bitmap OldNowPlayingForSpotify1 {
-            get {
-                object obj = ResourceManager.GetObject("OldNowPlayingForSpotify1", resourceCulture);
+                object obj = ResourceManager.GetObject("NowPlayingForSpotifyPng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
