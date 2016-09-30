@@ -117,10 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CantConnectToSpotify" xml:space="preserve">
+    <value>Spotify に接続できませんでした。</value>
+  </data>
   <data name="ChangeToDefaultFormat" xml:space="preserve">
     <value>デフォルトのフォーマットに戻してよろしいですか？</value>
   </data>
   <data name="ExitWithoutApply" xml:space="preserve">
     <value>変更を保存しないで終了してよろしいですか？</value>
+  </data>
+  <data name="PleaseTryAgainLater" xml:space="preserve">
+    <value>後ほどお試しください。</value>
+  </data>
+  <data name="SpotifyDoesNotRunning" xml:space="preserve">
+    <value>Spotify が起動していません。</value>
+  </data>
+  <data name="SpotifyWebHelperDoesNotRunning" xml:space="preserve">
+    <value>SpotifyWebHelper が起動していません。</value>
   </data>
 </root>

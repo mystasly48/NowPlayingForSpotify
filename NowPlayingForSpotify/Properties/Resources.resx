@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AreYouWantToReAuthentication" xml:space="preserve">
+    <value>Are you want to re-authentication?</value>
+  </data>
+  <data name="CantConnectToSpotify" xml:space="preserve">
+    <value>Can't connect to Spotify.</value>
+  </data>
   <data name="ChangeToDefaultFormat" xml:space="preserve">
     <value>Are you sure you want to change back to the default format?</value>
   </data>
@@ -129,5 +135,20 @@
   </data>
   <data name="NowPlayingForSpotifyPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\NowPlayingForSpotify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PleaseTryAgainLater" xml:space="preserve">
+    <value>Please try again later.</value>
+  </data>
+  <data name="SpotifyDoesNotRunning" xml:space="preserve">
+    <value>Spotify does not running.</value>
+  </data>
+  <data name="SpotifyWebHelperDoesNotRunning" xml:space="preserve">
+    <value>SpotifyWebHelper does not running.</value>
+  </data>
+  <data name="ThereIsNotTwitterAccount" xml:space="preserve">
+    <value>There is no Twitter account.</value>
+  </data>
+  <data name="WhenYouSelectYesProgramWillExit" xml:space="preserve">
+    <value>When you select Yes, the application will exit.</value>
   </data>
 </root>
