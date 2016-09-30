@@ -61,11 +61,29 @@ namespace NowPlayingForSpotify.Properties {
         }
         
         /// <summary>
+        ///   Are you sure you want to change back to the default format? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ChangeToDefaultFormat {
+            get {
+                return ResourceManager.GetString("ChangeToDefaultFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Are you sure you want to exit without applying your changes? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ExitWithoutApply {
+            get {
+                return ResourceManager.GetString("ExitWithoutApply", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
         /// </summary>
-        internal static System.Drawing.Icon NowPlayingForSpotifyIcon {
+        internal static System.Drawing.Icon NowPlayingForSpotifyIco {
             get {
-                object obj = ResourceManager.GetObject("NowPlayingForSpotifyIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("NowPlayingForSpotifyIco", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
