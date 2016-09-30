@@ -254,3 +254,6 @@ paket-files/
 
 # CodeRush
 .cr/
+
+# Manual
+NowPlayingForSpotify/SecretKeys.cs
