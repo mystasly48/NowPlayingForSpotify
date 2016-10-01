@@ -56,6 +56,7 @@ namespace NowPlayingForSpotify {
 
         // Save the before values
         private void SettingsForm_Load(object sender, EventArgs e) {
+            ActiveControl = button2;
             before = GetCurrentSettingValues();
         }
 

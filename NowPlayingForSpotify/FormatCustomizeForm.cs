@@ -11,6 +11,7 @@ namespace NowPlayingForSpotify {
         string defaultFormat = "%artist% - %track% #NowPlaying #Spotify %trackurl%";
 
         private void FormatCustomizeForm_Load(object sender, EventArgs e) {
+            ActiveControl = label1;
             textBox1.Text = Settings.Default.TweetFormat;
         }
 
