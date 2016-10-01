@@ -73,7 +73,7 @@ namespace NowPlayingForSpotify.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("%artist% - %track% #NowPlaying #Spotify %trackurl%")]
         public string TweetFormat {
             get {
                 return ((string)(this["TweetFormat"]));
@@ -86,24 +86,36 @@ namespace NowPlayingForSpotify.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
-        public global::System.Drawing.Point StartPosition {
+        public global::System.Drawing.Point Location {
             get {
-                return ((global::System.Drawing.Point)(this["StartPosition"]));
+                return ((global::System.Drawing.Point)(this["Location"]));
             }
             set {
-                this["StartPosition"] = value;
+                this["Location"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool Visible {
+            get {
+                return ((bool)(this["Visible"]));
+            }
+            set {
+                this["Visible"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool StartVisible {
+        public bool TopMost {
             get {
-                return ((bool)(this["StartVisible"]));
+                return ((bool)(this["TopMost"]));
             }
             set {
-                this["StartVisible"] = value;
+                this["TopMost"] = value;
             }
         }
     }
