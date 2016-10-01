@@ -115,6 +115,7 @@ namespace NowPlayingForSpotify {
             ShowSplash();
             init();
             CloseSplash();
+            ActiveControl = albumPicture;
         }
 
         private void timer1_Tick(object sender, EventArgs e) {
@@ -146,7 +147,7 @@ namespace NowPlayingForSpotify {
             HideNotifyIcon();
         }
 
-        private void button1_Click(object sender, EventArgs e) {
+        private void hideBtn_Click(object sender, EventArgs e) {
             ShowNotifyIcon();
         }
 
@@ -159,6 +160,11 @@ namespace NowPlayingForSpotify {
             SaveSettings();
             notifyIcon1.Visible = false;
             notifyIcon1.Dispose();
+        }
+
+        private void aboutBtn_Click(object sender, EventArgs e) {
+            var aboutForm = new AboutForm();
+            aboutForm.ShowDialog();
         }
 
         #endregion
