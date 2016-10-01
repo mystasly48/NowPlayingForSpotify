@@ -129,6 +129,9 @@
   <data name="ExitWithoutApply" xml:space="preserve">
     <value>変更を保存しないで終了してよろしいですか？</value>
   </data>
+  <data name="PlayingAdvertising" xml:space="preserve">
+    <value>現在広告が再生中です...</value>
+  </data>
   <data name="PleaseTryAgainLater" xml:space="preserve">
     <value>後ほどお試しください。</value>
   </data>

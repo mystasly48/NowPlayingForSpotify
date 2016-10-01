@@ -363,7 +363,7 @@ namespace NowPlayingForSpotify {
             artistLink.Tag = "";
             albumLink.Text = Information.Spotify;
             albumLink.Tag = "";
-            albumPicture.Image = null;
+            albumPicture.Image = Resources.NoImage;
             timer1.Stop();
         }
 

@@ -97,6 +97,16 @@ namespace NowPlayingForSpotify.Properties {
         }
         
         /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap NoImage {
+            get {
+                object obj = ResourceManager.GetObject("NoImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   (アイコン) に類似した型 System.Drawing.Icon のローカライズされたリソースを検索します。
         /// </summary>
         internal static System.Drawing.Icon NowPlayingForSpotifyIco {
@@ -113,6 +123,15 @@ namespace NowPlayingForSpotify.Properties {
             get {
                 object obj = ResourceManager.GetObject("NowPlayingForSpotifyPng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Currently playing the advertising... に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string PlayingAdvertising {
+            get {
+                return ResourceManager.GetString("PlayingAdvertising", resourceCulture);
             }
         }
         
