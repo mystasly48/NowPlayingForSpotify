@@ -61,7 +61,8 @@ namespace NowPlayingForSpotify {
 
         private void SaveSettings() {
             Settings.Default.LastTweet = LastTweet;
-            Settings.Default.Location = Location;
+            if (WindowState != FormWindowState.Minimized)
+              Settings.Default.Location = Location;
             Settings.Default.Save();
         }
 
