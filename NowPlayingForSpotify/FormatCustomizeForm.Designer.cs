@@ -70,7 +70,7 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // FormatCustomize
+            // FormatCustomizeForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -85,6 +85,7 @@
             this.Name = "FormatCustomizeForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormatCustomizeForm_FormClosing);
             this.Load += new System.EventHandler(this.FormatCustomizeForm_Load);
             this.ResumeLayout(false);

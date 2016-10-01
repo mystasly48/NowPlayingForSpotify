@@ -38,7 +38,11 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.webBrowser1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AuthBrowser";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AuthBrowser_FormClosing);
             this.Load += new System.EventHandler(this.AuthBrowser_Load);

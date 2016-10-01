@@ -235,6 +235,7 @@
             this.Name = "FormatsForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FormatsForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
