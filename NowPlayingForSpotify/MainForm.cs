@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
@@ -18,17 +19,13 @@ namespace NowPlayingForSpotify {
 
         #region Reference
 
-        public static string AppName = "NowPlaying for Spotify";
-        Settings settings = new Settings();
-        string Spotify = "Spotify";
-        Tokens twitter;
         SpotifyLocalAPI spotify = new SpotifyLocalAPI();
-        Track currentTrack;
-        bool IsPlaying = false;
-        String LastTweet = "";
-        Boolean CreateTextFile = false;
-        DateTime StartTime;
+        Tokens twitter;
         SplashForm splash = new SplashForm();
+        Track currentTrack;
+        DateTime StartTime;
+        bool IsPlaying = false;
+        string LastTweet = "";
 
         #endregion
 
@@ -42,7 +39,7 @@ namespace NowPlayingForSpotify {
         private void CloseSplash() {
             splash.Close();
             splash.Dispose();
-            this.Activate();
+            Activate();
         }
 
         private void OpenLink(LinkLabel label) {
@@ -56,18 +53,16 @@ namespace NowPlayingForSpotify {
         }
 
         private void SettingsInit() {
-            LastTweet = settings.LastTweet;
-            CreateTextFile = settings.CreateTextFile;
-
-            this.Location = settings.StartPosition;
-            checkBox1.Checked = CreateTextFile;
+            Settings.Default.SettingsSaving += SettingsSaving;
+            LastTweet = Settings.Default.LastTweet;
+            Location = Settings.Default.Location;
+            TopMost = Settings.Default.TopMost;
         }
 
         private void SaveSettings() {
-            settings.LastTweet = LastTweet;
-            //settings.CreateTextFile = CreateTextFile;
-            settings.StartPosition = this.Location;
-            settings.Save();
+            Settings.Default.LastTweet = LastTweet;
+            Settings.Default.Location = Location;
+            Settings.Default.Save();
         }
 
         private void EnvironmentExit() {
@@ -79,7 +74,7 @@ namespace NowPlayingForSpotify {
         }
 
         private void Message(string msg) {
-            MessageBox.Show(msg, AppName);
+            MessageBox.Show(msg, Information.Name);
         }
 
         private void Message(string msg, string title) {
@@ -87,18 +82,18 @@ namespace NowPlayingForSpotify {
         }
 
         private void HideNotifyIcon() {
-            this.Show();
+            Show();
             notifyIcon1.Visible = false;
         }
 
         private void ShowNotifyIcon() {
-            this.Hide();
+            Hide();
             notifyIcon1.Visible = true;
         }
 
         private void CreateNowPlayingFile() {
-            if (CreateTextFile) {
-                var path = "NowPlaying.txt";
+            if (Settings.Default.CreateText) {
+                var path = Information.NowPlaying + ".txt";
                 var space = "     ";
                 var str = artistLink.Text + " - " + trackLink.Text + space;
                 using (var sr = new StreamWriter(path, false, Encoding.UTF8)) {
@@ -112,6 +107,10 @@ namespace NowPlayingForSpotify {
         #region Form
 
         private void MainForm_Load(object sender, EventArgs e) {
+            if (!Settings.Default.Visible) {
+                splash.Visible = false;
+                ShowNotifyIcon();
+            }
             ShowSplash();
             init();
             CloseSplash();
@@ -151,8 +150,8 @@ namespace NowPlayingForSpotify {
         }
 
         private void settingsBtn_Click(object sender, EventArgs e) {
-            FormatCustomize form = new FormatCustomize();
-            form.ShowDialog();
+            var settingsForm = new SettingsForm();
+            settingsForm.ShowDialog();
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
@@ -161,43 +160,37 @@ namespace NowPlayingForSpotify {
             notifyIcon1.Dispose();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e) {
-            CreateTextFile = checkBox1.Checked;
-            CreateNowPlayingFile();
-        }
-
         #endregion
 
         #region Twitter
 
         private void TwitterInit() {
-            if (String.IsNullOrEmpty(settings.AccessToken) || String.IsNullOrEmpty(settings.AccessSecret)) {
-                var session = OAuth.Authorize(Keys.ConsumerKey, Keys.ConsumerSecret);
-                Process.Start(session.AuthorizeUri.AbsoluteUri);
-                InputBox input = new InputBox();
-                while (true) {
-                    input.ShowDialog();
-                    var pin = input.Pin;
-                    if (pin.Equals("exit")) {
-                        Environment.Exit(0);
-                    }
-                    try {
-                        twitter = session.GetTokens(pin);
-                        break;
-                    } catch (TwitterException ex) {
-                        if (ex.Message.Equals("Error processing your OAuth request: Invalid oauth_verifier parameter")) {
-                            continue;
-                        }
-                        throw;
+            if (string.IsNullOrEmpty(Settings.Default.AccessToken) || string.IsNullOrEmpty(Settings.Default.AccessSecret)) {
+                START:
+                var session = OAuth.Authorize(SecretKeys.ConsumerKey, SecretKeys.ConsumerSecret);
+                var browser = new AuthBrowser();
+                browser.URL = session.AuthorizeUri.AbsoluteUri;
+                browser.ShowDialog();
+                if (browser.Success) {
+                    twitter = session.GetTokens(browser.PIN);
+                } else {
+                    var result = MessageBox.Show(Resources.ThereIsNotTwitterAccount + Environment.NewLine + Resources.AreYouWantToReAuthentication + "(" + Resources.WhenYouSelectYesProgramWillExit + ")", Information.Name, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    switch (result) {
+                        case DialogResult.Yes:
+                            goto START;
+                        case DialogResult.No:
+                            Environment.Exit(0);
+                            break;
                     }
                 }
-                settings.AccessToken = twitter.AccessToken;
-                settings.AccessSecret = twitter.AccessTokenSecret;
-                settings.Save();
+                browser.Dispose();
+                Settings.Default.AccessToken = twitter.AccessToken;
+                Settings.Default.AccessSecret = twitter.AccessTokenSecret;
+                Settings.Default.Save();
             } else {
-                twitter = Tokens.Create(Keys.ConsumerKey, Keys.ConsumerSecret, settings.AccessToken, settings.AccessSecret);
+                twitter = Tokens.Create(SecretKeys.ConsumerKey, SecretKeys.ConsumerSecret, Settings.Default.AccessToken, Settings.Default.AccessSecret);
             }
-            if (String.IsNullOrEmpty(LastTweet)) {
+            if (string.IsNullOrEmpty(LastTweet)) {
                 var timeline = twitter.Statuses.UserTimeline(screen_name: twitter.Account.UpdateProfile().ScreenName, count: 1, exclude_replies: true, include_rts: false);
                 foreach (var tweet in timeline) {
                     LastTweet = tweet.Text;
@@ -214,7 +207,7 @@ namespace NowPlayingForSpotify {
             var artisturl = artistLink.Tag.ToString().Replace("spotify:artist:", "https://open.spotify.com/artist/");
             var albumurl = albumLink.Tag.ToString().Replace("spotify:album:", "https://open.spotify.com/album/");
             var newline = Environment.NewLine;
-            var tweet = settings.TweetFormat;
+            var tweet = Settings.Default.TweetFormat;
 
             track = ShortenTweet(track, 30);
             artist = ShortenTweet(artist, 30);
@@ -286,12 +279,12 @@ namespace NowPlayingForSpotify {
             spotify.OnPlayStateChange += OnPlayStateChange;
 
             if (!SpotifyLocalAPI.IsSpotifyRunning()) {
-                Message("Spotify が起動していません。");
+                Message(Resources.SpotifyDoesNotRunning);
                 EnvironmentExit();
                 return;
             }
             if (!SpotifyLocalAPI.IsSpotifyWebHelperRunning()) {
-                Message("SpotifyWebHelper が起動していません。");
+                Message(Resources.SpotifyWebHelperDoesNotRunning);
                 EnvironmentExit();
                 return;
             }
@@ -300,7 +293,7 @@ namespace NowPlayingForSpotify {
             if (successful) {
                 spotify.ListenForEvents = true;
             } else {
-                Message("Spotify に接続できませんでした。" + Environment.NewLine + "後ほどお試しください。");
+                Message(Resources.CantConnectToSpotify + Environment.NewLine + Resources.PleaseTryAgainLater);
                 EnvironmentExit();
             }
 
@@ -359,11 +352,11 @@ namespace NowPlayingForSpotify {
         }
 
         private void AdUpdate() {
-            trackLink.Text = Spotify;
+            trackLink.Text = Information.Spotify;
             trackLink.Tag = "";
-            artistLink.Text = Spotify;
+            artistLink.Text = Information.Spotify;
             artistLink.Tag = "";
-            albumLink.Text = Spotify;
+            albumLink.Text = Information.Spotify;
             albumLink.Tag = "";
             albumPicture.Image = null;
             timer1.Stop();
@@ -371,7 +364,11 @@ namespace NowPlayingForSpotify {
 
         #endregion
 
-        #region Log
+        #region Settings
+
+        private void SettingsSaving(object sender, CancelEventArgs e) {
+            TopMost = Settings.Default.TopMost; // Always update
+        }
 
         #endregion
     }

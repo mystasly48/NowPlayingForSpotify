@@ -38,7 +38,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hideBtn = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.settingsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.albumPicture)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -121,13 +120,6 @@
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // checkBox1
-            // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
             // settingsBtn
             // 
             resources.ApplyResources(this.settingsBtn, "settingsBtn");
@@ -140,7 +132,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.settingsBtn);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.hideBtn);
             this.Controls.Add(this.albumLink);
             this.Controls.Add(this.artistLink);
@@ -176,7 +167,6 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button hideBtn;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button settingsBtn;
     }
 }

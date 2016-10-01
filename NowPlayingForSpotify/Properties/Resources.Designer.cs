@@ -61,6 +61,24 @@ namespace NowPlayingForSpotify.Properties {
         }
         
         /// <summary>
+        ///   Are you want to re-authentication? に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string AreYouWantToReAuthentication {
+            get {
+                return ResourceManager.GetString("AreYouWantToReAuthentication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Can&apos;t connect to Spotify. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string CantConnectToSpotify {
+            get {
+                return ResourceManager.GetString("CantConnectToSpotify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Are you sure you want to change back to the default format? に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string ChangeToDefaultFormat {
@@ -95,6 +113,51 @@ namespace NowPlayingForSpotify.Properties {
             get {
                 object obj = ResourceManager.GetObject("NowPlayingForSpotifyPng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Please try again later. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string PleaseTryAgainLater {
+            get {
+                return ResourceManager.GetString("PleaseTryAgainLater", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Spotify does not running. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SpotifyDoesNotRunning {
+            get {
+                return ResourceManager.GetString("SpotifyDoesNotRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SpotifyWebHelper does not running. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SpotifyWebHelperDoesNotRunning {
+            get {
+                return ResourceManager.GetString("SpotifyWebHelperDoesNotRunning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   There is no Twitter account. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ThereIsNotTwitterAccount {
+            get {
+                return ResourceManager.GetString("ThereIsNotTwitterAccount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   When you select Yes, the application will exit. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string WhenYouSelectYesProgramWillExit {
+            get {
+                return ResourceManager.GetString("WhenYouSelectYesProgramWillExit", resourceCulture);
             }
         }
     }

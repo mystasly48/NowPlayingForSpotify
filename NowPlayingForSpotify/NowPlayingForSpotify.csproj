@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\NowPlayingForSpotify.ico</ApplicationIcon>
+    <ApplicationIcon>Images\NowPlayingForSpotify.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>
@@ -65,6 +65,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthBrowser.Designer.cs">
+      <DependentUpon>AuthBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormatCustomizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormatCustomizeForm.Designer.cs">
+      <DependentUpon>FormatCustomizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormatsForm.Designer.cs">
+      <DependentUpon>FormatsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Information.cs" />
+    <Compile Include="Localization.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,19 +93,66 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SecretKeys.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SplashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AuthBrowser.ja.resx">
+      <DependentUpon>AuthBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AuthBrowser.resx">
+      <DependentUpon>AuthBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormatCustomizeForm.ja.resx">
+      <DependentUpon>FormatCustomizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormatCustomizeForm.resx">
+      <DependentUpon>FormatCustomizeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormatsForm.ja.resx">
+      <DependentUpon>FormatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormatsForm.resx">
+      <DependentUpon>FormatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ja.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
+    <EmbeddedResource Include="Properties\Resources.ja.resx" />
+    <EmbeddedResource Include="SettingsForm.ja.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.ja.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -101,16 +168,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NowPlayingForSpotify.ico" />
+    <None Include="Images\NowPlayingForSpotify.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NowPlayingForSpotify.png" />
+    <None Include="Images\NowPlayingForSpotify.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\OldNowPlayingForSpotify.ico" />
+    <None Include="Images\OldNowPlayingForSpotify.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\OldNowPlayingForSpotify.png" />
+    <None Include="Images\OldNowPlayingForSpotify.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
