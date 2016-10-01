@@ -117,44 +117,121 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AreYouWantToReAuthentication" xml:space="preserve">
-    <value>Are you want to re-authentication?</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="CantConnectToSpotify" xml:space="preserve">
-    <value>Can't connect to Spotify.</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>NowPlaying for Spotify</value>
   </data>
-  <data name="ChangeToDefaultFormat" xml:space="preserve">
-    <value>Are you sure you want to change back to the default format?</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>NowPlaying for Spotify</value>
   </data>
-  <data name="ExitWithoutApply" xml:space="preserve">
-    <value>Are you sure you want to exit without applying your changes?</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS UI Gothic, 18pt</value>
+  </data>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 123</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>MS UI Gothic, 27.75pt</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SplashForm</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="NoImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\NoImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
-  <data name="NowPlayingForSpotifyIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\NowPlayingForSpotify.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>160, 40</value>
   </data>
-  <data name="NowPlayingForSpotifyPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\NowPlayingForSpotify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="PlayingAdvertising" xml:space="preserve">
-    <value>Currently playing the advertising...</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>541, 147</value>
   </data>
-  <data name="PleaseTryAgainLater" xml:space="preserve">
-    <value>Please try again later.</value>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
-  <data name="SpotifyDoesNotRunning" xml:space="preserve">
-    <value>Spotify does not running.</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
-  <data name="SpotifyWebHelperDoesNotRunning" xml:space="preserve">
-    <value>SpotifyWebHelper does not running.</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
-  <data name="ThereIsNotTwitterAccount" xml:space="preserve">
-    <value>There is no Twitter account.</value>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
   </data>
-  <data name="WhenYouSelectYesProgramWillExit" xml:space="preserve">
-    <value>When you select Yes, the application will exit.</value>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Starting.....</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 24</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>400, 101</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 37</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Name" xml:space="preserve">
+    <value>pictureBox1</value>
+  </data>
+  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ja</value>
+  </metadata>
 </root>

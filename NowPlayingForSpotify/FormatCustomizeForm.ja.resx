@@ -117,44 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AreYouWantToReAuthentication" xml:space="preserve">
-    <value>Are you want to re-authentication?</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>210, 12</value>
   </data>
-  <data name="CantConnectToSpotify" xml:space="preserve">
-    <value>Can't connect to Spotify.</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>ツイートのフォーマットをカスタマイズできます。</value>
   </data>
-  <data name="ChangeToDefaultFormat" xml:space="preserve">
-    <value>Are you sure you want to change back to the default format?</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>適用</value>
   </data>
-  <data name="ExitWithoutApply" xml:space="preserve">
-    <value>Are you sure you want to exit without applying your changes?</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>フォーマット</value>
+  </data>
+  <data name="button4.Text" xml:space="preserve">
+    <value>デフォルト</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="NoImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\NoImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
-  <data name="NowPlayingForSpotifyIco" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\NowPlayingForSpotify.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NowPlayingForSpotifyPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Images\NowPlayingForSpotify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PlayingAdvertising" xml:space="preserve">
-    <value>Currently playing the advertising...</value>
-  </data>
-  <data name="PleaseTryAgainLater" xml:space="preserve">
-    <value>Please try again later.</value>
-  </data>
-  <data name="SpotifyDoesNotRunning" xml:space="preserve">
-    <value>Spotify does not running.</value>
-  </data>
-  <data name="SpotifyWebHelperDoesNotRunning" xml:space="preserve">
-    <value>SpotifyWebHelper does not running.</value>
-  </data>
-  <data name="ThereIsNotTwitterAccount" xml:space="preserve">
-    <value>There is no Twitter account.</value>
-  </data>
-  <data name="WhenYouSelectYesProgramWillExit" xml:space="preserve">
-    <value>When you select Yes, the application will exit.</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>ツイートフォーマットカスタマイズ</value>
   </data>
 </root>
