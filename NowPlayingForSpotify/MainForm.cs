@@ -284,9 +284,7 @@ namespace NowPlayingForSpotify {
                 return;
             }
             if (!SpotifyLocalAPI.IsSpotifyWebHelperRunning()) {
-                Message(Resources.SpotifyWebHelperDoesNotRunning);
-                EnvironmentExit();
-                return;
+                SpotifyLocalAPI.RunSpotifyWebHelper();
             }
 
             var successful = spotify.Connect();
