@@ -8,18 +8,17 @@ namespace NowPlayingForSpotify {
             InitializeComponent();
         }
 
-        Settings settings = new Settings();
         string defaultFormat = "%artist% - %track% #NowPlaying #Spotify %trackurl%";
 
         private void FormatCustomizeForm_Load(object sender, EventArgs e) {
-            textBox1.Text = settings.TweetFormat;
+            textBox1.Text = Settings.Default.TweetFormat;
         }
 
         // Apply
         private void button1_Click(object sender, EventArgs e) {
             button1.Enabled = false;
-            settings.TweetFormat = textBox1.Text;
-            settings.Save();
+            Settings.Default.TweetFormat = textBox1.Text;
+            Settings.Default.Save();
             button1.Enabled = true;
         }
 
@@ -30,7 +29,7 @@ namespace NowPlayingForSpotify {
 
         // Format
         private void button3_Click(object sender, EventArgs e) {
-            var form = new Format();
+            var form = new FormatsForm();
             form.ShowDialog();
         }
 
@@ -42,12 +41,8 @@ namespace NowPlayingForSpotify {
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e) {
-            
-        }
-
         private void FormatCustomizeForm_FormClosing(object sender, FormClosingEventArgs e) {
-            if (textBox1.Text != settings.TweetFormat) {
+            if (textBox1.Text != Settings.Default.TweetFormat) {
                 var result = MessageBox.Show(Resources.ExitWithoutApply, Information.Name, MessageBoxButtons.YesNo);
                 if (result == DialogResult.No) {
                     e.Cancel = true;
