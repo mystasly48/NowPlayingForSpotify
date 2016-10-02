@@ -44,7 +44,9 @@ namespace NowPlayingForSpotify {
         }
 
         private void OpenLink(LinkLabel label) {
-            Process.Start(label.Tag.ToString());
+            if (!string.IsNullOrEmpty(label.Tag.ToString())) {
+                Process.Start(label.Tag.ToString());
+            }
         }
 
         private void init() {
