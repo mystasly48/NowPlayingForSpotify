@@ -145,6 +145,18 @@
   <data name="albumLink.Location" type="System.Drawing.Point, System.Drawing">
     <value>170, 59</value>
   </data>
+  <data name="showToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="showToolStripMenuItem.Text" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>終了</value>
+  </data>
   <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 48</value>
   </data>
@@ -6324,26 +6336,11 @@
   <data name="notifyIcon1.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="showToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
-  </data>
-  <data name="showToolStripMenuItem.Text" xml:space="preserve">
-    <value>表示</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>終了</value>
-  </data>
   <data name="hideBtn.Text" xml:space="preserve">
     <value>隠す</value>
   </data>
   <data name="settingsBtn.Text" xml:space="preserve">
     <value>設定</value>
-  </data>
-  <data name="aboutBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 90</value>
   </data>
   <data name="aboutBtn.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 23</value>

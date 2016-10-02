@@ -111,14 +111,19 @@ namespace NowPlayingForSpotify {
         #region Form
 
         private void MainForm_Load(object sender, EventArgs e) {
-            if (!Settings.Default.Visible) {
-                splash.Visible = false;
-                ShowNotifyIcon();
+            if (Settings.Default.Hide) {
+                splash.Opacity = 0;
             }
             ShowSplash();
             init();
             CloseSplash();
             ActiveControl = albumPicture;
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e) {
+            if (Settings.Default.Hide) {
+                ShowNotifyIcon();
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e) {
