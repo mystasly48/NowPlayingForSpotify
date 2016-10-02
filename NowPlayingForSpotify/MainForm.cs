@@ -25,6 +25,7 @@ namespace NowPlayingForSpotify {
         Track currentTrack;
         DateTime StartTime;
         bool IsPlaying = false;
+        bool IsLocalTrack = false;
         string LastTweet = "";
 
         #endregion
@@ -222,15 +223,21 @@ namespace NowPlayingForSpotify {
             // url 60
             // other 30
             // format 50
-
+            
             tweet = ReplaceFormat(tweet, "%track%", track);
             tweet = ReplaceFormat(tweet, "%artist%", artist);
             tweet = ReplaceFormat(tweet, "%album%", album);
-            tweet = ReplaceFormat(tweet, "%trackurl%", trackurl);
-            tweet = ReplaceFormat(tweet, "%artisturl%", artisturl);
-            tweet = ReplaceFormat(tweet, "%albumurl%", albumurl);
             tweet = ReplaceFormat(tweet, "%datetime%", datetime);
             tweet = ReplaceFormat(tweet, "%newline%", newline);
+            if (IsLocalTrack) {
+                tweet = tweet.Replace("%trackurl%", "");
+                tweet = tweet.Replace("%artisturl%", "");
+                tweet = tweet.Replace("%albumurl%", "");
+            } else {
+                tweet = ReplaceFormat(tweet, "%trackurl%", trackurl);
+                tweet = ReplaceFormat(tweet, "%artisturl%", artisturl);
+                tweet = ReplaceFormat(tweet, "%albumurl%", albumurl);
+            }
 
             tweet = ShortenTweet(tweet, 140);
 
@@ -333,20 +340,25 @@ namespace NowPlayingForSpotify {
                 Invoke(method, new object[] { track });
             }
 
+            IsLocalTrack = false;
+
             currentTrack = track;
 
-            if (track.IsAd()) {
+            if (track.TrackType == "normal") {
+                albumPicture.Image = await track.GetAlbumArtAsync(AlbumArtSize.Size160);
+                trackLink.Text = track.TrackResource.Name;
+                trackLink.Tag = track.TrackResource.Uri;
+                artistLink.Text = track.ArtistResource.Name;
+                artistLink.Tag = track.ArtistResource.Uri;
+                albumLink.Text = track.AlbumResource.Name;
+                albumLink.Tag = track.AlbumResource.Uri;
+            } else if (track.TrackType == "local") {
+                LocalUpdate(track);
+                IsLocalTrack = true;
+            } else if (track.IsAd()) {
                 AdUpdate();
                 return;
             }
-
-            albumPicture.Image = await track.GetAlbumArtAsync(AlbumArtSize.Size160);
-            trackLink.Text = track.TrackResource.Name;
-            trackLink.Tag = track.TrackResource.Uri;
-            artistLink.Text = track.ArtistResource.Name;
-            artistLink.Tag = track.ArtistResource.Uri;
-            albumLink.Text = track.AlbumResource.Name;
-            albumLink.Tag = track.AlbumResource.Uri;
 
             CreateNowPlayingFile();
 
@@ -365,6 +377,16 @@ namespace NowPlayingForSpotify {
             albumLink.Tag = "";
             albumPicture.Image = Resources.NoImage;
             timer1.Stop();
+        }
+
+        private void LocalUpdate(Track track) {
+            trackLink.Text = track.TrackResource.Name;
+            trackLink.Tag = "";
+            artistLink.Text = track.ArtistResource.Name;
+            artistLink.Tag = "";
+            albumLink.Text = track.AlbumResource.Name;
+            albumLink.Tag = "";
+            albumPicture.Image = Resources.NoImage;
         }
 
         #endregion
