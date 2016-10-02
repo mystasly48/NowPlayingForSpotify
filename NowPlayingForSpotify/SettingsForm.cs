@@ -35,7 +35,7 @@ namespace NowPlayingForSpotify {
         
         // Automatically show in notification area
         private void checkBox4_CheckedChanged(object sender, EventArgs e) {
-            Settings.Default.Visible = checkBox4.Checked;
+            Settings.Default.Hide = checkBox4.Checked;
         }
 
         // Apply
@@ -57,6 +57,7 @@ namespace NowPlayingForSpotify {
         // Save the before values
         private void SettingsForm_Load(object sender, EventArgs e) {
             ActiveControl = button2;
+            UpdateSettings();
             before = GetCurrentSettingValues();
         }
 
@@ -66,6 +67,12 @@ namespace NowPlayingForSpotify {
             list.Add(checkBox2.Checked.ToString());
             list.Add(checkBox4.Checked.ToString());
             return list;
+        }
+
+        private void UpdateSettings() {
+            checkBox1.Checked = Settings.Default.CreateText;
+            checkBox2.Checked = Settings.Default.TopMost;
+            checkBox4.Checked = Settings.Default.Hide;
         }
     }
 }
