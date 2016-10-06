@@ -111,9 +111,6 @@ namespace NowPlayingForSpotify {
         #region Form
 
         private void MainForm_Load(object sender, EventArgs e) {
-            if (Settings.Default.Hide) {
-                splash.Opacity = 0;
-            }
             ShowSplash();
             init();
             CloseSplash();
@@ -121,9 +118,7 @@ namespace NowPlayingForSpotify {
         }
 
         private void MainForm_Shown(object sender, EventArgs e) {
-            if (Settings.Default.Hide) {
-                ShowNotifyIcon();
-            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e) {

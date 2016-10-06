@@ -6,10 +6,5 @@ namespace NowPlayingForSpotify {
         public SplashForm() {
             InitializeComponent();
         }
-
-        private void SplashForm_Shown(object sender, System.EventArgs e) {
-            if (Settings.Default.Hide)
-                Hide();
-        }
     }
 }
