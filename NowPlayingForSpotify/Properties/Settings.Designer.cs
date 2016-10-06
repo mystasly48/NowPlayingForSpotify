@@ -97,13 +97,13 @@ namespace NowPlayingForSpotify.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool Visible {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Hide {
             get {
-                return ((bool)(this["Visible"]));
+                return ((bool)(this["Hide"]));
             }
             set {
-                this["Visible"] = value;
+                this["Hide"] = value;
             }
         }
         
