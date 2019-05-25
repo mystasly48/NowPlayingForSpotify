@@ -105,7 +105,6 @@
       <DependentUpon>FormatsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Information.cs" />
-    <Compile Include="Localization.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
