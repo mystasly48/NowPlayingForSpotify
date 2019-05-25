@@ -295,6 +295,7 @@ namespace NowPlayingForSpotify {
       spotify.OnPlayStateChange += OnPlayStateChange;
 
       if (!SpotifyLocalAPI.IsSpotifyRunning()) {
+        CloseSplash();
         Message(Resources.SpotifyDoesNotRunning);
         EnvironmentExit();
         return;
@@ -307,6 +308,7 @@ namespace NowPlayingForSpotify {
       if (successful) {
         spotify.ListenForEvents = true;
       } else {
+        CloseSplash();
         Message(Resources.CantConnectToSpotify + Environment.NewLine + Resources.PleaseTryAgainLater);
         EnvironmentExit();
       }
